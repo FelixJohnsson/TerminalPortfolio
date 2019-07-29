@@ -6,7 +6,8 @@ body {
   background-color: black;
   color: #28FE14;
   font-size: 110%;
-  font-family: 'Source Code Pro', monospace;
+  font-family: Hack, monospace;
+  text-shadow: -0.06em 0 	whitesmoke, 0.06em 0 black;
   padding: 10vh;
 }
 
@@ -15,14 +16,18 @@ input {
   border: solid black;
   outline: none;
   color: transparent;
-  text-shadow: 0 0 0 green;
-  font-size: 100%;
-  font-family: 'Source Code Pro', monospace;
+  color: #28FE14;
+  font-family: Hack, monospace;
+  text-shadow: -0.06em 0 	whitesmoke, 0.06em 0 black;
+  text-shadow: red;
+  caret-color: black;
 }
 
 button {
   background-color: black;
   outline: none;
+  font-size: 110%;
+  text-shadow: -0.06em 0 	whitesmoke, 0.06em 0 black;
   border: solid;
 }
 

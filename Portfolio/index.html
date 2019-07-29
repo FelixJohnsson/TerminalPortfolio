@@ -3,24 +3,25 @@
 
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="./jQuery plugins/t.min.js"></script>
   <script src="./jQuery plugins/t.js"></script>
+  <script src="./[0]s.js"></script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Felix Johnsson</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="path/to/hack-subset.css">
+  <script src="/js/pdfobject.js"></script>
+  <script>PDFObject.embed("./cv.pdf", "#example1");</script>
 
 </head>
-
 <body>
-        <p id="demo_4"><ins><span id="speed">100</span></ins><span id="dontShow">aaaaaaaaaa</span></p>
-  <pre id="demo_2">
+  <pre id="intro">
     <ins>
     <span style="color:dodgerblue;">
-    &lt;/salt&gt;(C) <u>Class of Winter 2019</u>
-    (C)Copyright School of Applied Technology. 2016-2019
+    F.J. Code <u>Felix Johnsson</u>
+    (C)Copyright F.J. Code 1995-2019
     </span>
     <hr/>
     <ins>in <span class="blue">user#3129/</span></ins>
@@ -30,107 +31,142 @@
     <ins>></ins><ins>1</ins><kbd>cd FelixJoh<ins>nssonPortfolio</ins></kbd>
 
     <ins>in <span class="blue">FelixJohnssonPortfolio/</span></ins>
-    <ins>></ins><ins>1</ins><kbd>git clone <ins>https://github.com/saltsthlm/salt-winter19-portfolio/tree/FelixJohnsson</ins></kbd>
+    <ins>></ins><ins>1</ins><kbd>git clone <ins>https://github.com/FelixJohnsson/portfolio</ins></kbd>
     <ins>Cloning into 'FelixJohnssonPortfolio'...</ins><ins>3</ins>
-    <del>felkx</del>felix
     <ins>remote: Enumerating objects: 168, done.</ins>
     <ins>remote: Counting objects: 100% (168/168), done.</ins>
     <ins>remote: Compressing objects: 100% (87/87), done.</ins>
     <ins>remote: Total 38823 (delta 92), reused 146 (delta 73), pack-reused 38655</ins>
     <ins>Receiving objects:</ins><ins><span id="percentCounter">0%</span>, (38823/38823), 69.90 MiB | 8.84 MiB/s, done.</ins>
-    <span id="async"></span>
 
        <ins><span style="color:skyblue;">PORTFOLIO(R)</span></ins>
        <ins>Connecting</ins>.<ins>2</ins>...
 
-        <ins id="__caret"><span>Skills</span>
-        <span style="color:rgba(255, 0, 255, 0.972)"><u>CSS</u></span>:  [#########---]
-            <span style="color:rgba(255, 0, 255, 0.972)">BootStrap</span>:  [######------]
-            <span style="color:rgba(255, 0, 255, 0.972)">SMACS</span>:      [###---------]
+       <ins>Commands:</ins>
+       <ins>/help</ins>
+       <ins>/loadHobbies</ins>
+       <ins>/loadSkills</ins>
+       <ins>/loadContactInfo</ins>
+       <ins>/openGithub</ins>
+       <ins>/openCurrentProject</ins>
+       <ins>/openSweResume</ins>
+       <ins>/openEngResume</ins>
 
-        <span style="color:rgb(0, 247, 255)">HTML</span>: [######------]
-        
-        <span style="color:gold">JS</span>:   [###########-]
+       <ins>Press Tab to focus if you cant write. </ins>
 
-        <ins id="__caret"><span>Back-end frameworks</span>
-        <span style="color:rgb(255, 94, 0)">Node</span>:    [#######-----]
-        <span style="color:rgb(255, 94, 0)">Express</span>: [##----------]
-        <span style="color:rgb(255, 94, 0)">MongoDB</span>: [###---------]
-        <span style="color:rgb(255, 94, 0)">NPM</span>:     [###---------]
-        <span style="color:rgb(255, 94, 0)">REST</span>:    [#######-----]
-        </ins>
     </pre>
-
-  <script>
-
-        let counter = document.getElementById("percentCounter").innerText = 5 + '%';
-
-    
-    $('#demo_2').t({
-      mistype:20,
-      pause_on_click: true,
-      typing: function (elm, chr) {
-        if (chr.match(/skyblue/))
-          elm.find('.t-caret').hide();
-        else if (chr.match(/__caret/))
-          elm.find('.t-caret').show();
-      }
-    });
-    var new_speed = -4;
-
-    $('#demo_4').t({
-      speed: 10,
-      typing: function (e) {
-        new_speed += 8;
-        e.s(new_speed);
-        $('#speed').text(Math.max(new_speed));
-      }
-    });
-  
-
-    $('#t').t({
-
-      // typing speed in milliseconds
-      speed: 50,
-
-      // enable 'human-like'
-      speed_vary: true,
-
-      // delays start
-      delay: false,
-
-      // mistyping
-      mistype: false,
-
-      // en or de
-      locale: 'en',
-
-      // enable caret
-      caret: true,
-
-      // enable blink
-      blink: false,
-
-      // permanent caret blinking
-      blink_perm: true,
-
-      // wrapper tag
-      tag: 'span',
-
-      // pauses/continues typing on click/tap
-      pause_on_click: false,
-
-      // infinite or N times
-      repeat: false,
-
-      // Callbacks
-      init: function (elem) {},
-      typing: function (elem, chars_total, chars_left, char) {},
-      fin: function (elem) {}
-
-    });
-
-  </script>
+  <input type="text" id="commandLine" autofocus onkeypress="return command(event)">
 </body>
+<script>
+  setTimeout(() => {
 
+  })
+    let counter = document.getElementById("percentCounter").innerText = 100 + '%';
+
+$('#intro').t({
+  mistype:20,
+  speed:30,
+  pause_on_click: true,
+  typing: function (elm, chr) {
+    if (chr.match(/skyblue/))
+      elm.find('.t-caret').hide();
+    else if (chr.match(/__caret/))
+      elm.find('.t-caret').show();
+  }
+});
+
+function command(e) {
+    if (e.keyCode == 13) {
+        var text = document.getElementById("commandLine").value;
+        document.getElementById("commandLine").value = "";
+        run(text);
+        doucument.getElementById('commandLine').focus();
+        return false;
+    }
+}
+
+function run (text){
+  let command = text.split(' ')
+  console.log(command[0])
+    switch(command[0]){
+      case '/help':
+        $('#intro').t('add','Figure it out. <br>');
+        return;
+      break;
+      case '/loadHobbies':
+        $('#intro').t('add',`
+<ins><span>Hobbies (How much I like them, not how good I am at them. I'm bad at most.)</span></ins>
+
+  <span style="color:rgb(245, 179, 66)">Music</span>:        [###########-]
+  <span style="color:rgb(245, 179, 66)">Food</span>:         [#########---]
+  <span style="color:rgb(245, 179, 66)">Tech</span>:         [##########--]
+  <span style="color:rgb(245, 179, 66)">Basketball</span>:   [#######-----]
+  <span style="color:rgb(245, 179, 66)">Football</span>:     [########----]
+  </span></ins><br>`);
+        return;
+      break;
+      case '/loadSkills':
+        $('#intro').t('add',`
+<ins><span>Skills</span>
+
+<span style="color:rgba(255, 0, 255, 0.972)"><u>CSS3</u></span>:  [######------]
+  <span style="color:rgba(255, 0, 255, 0.972)">BootStrap</span>:  [######------]
+  <span style="color:rgba(255, 0, 255, 0.972)">SMACS</span>:      [###---------]
+
+<span style="color:rgb(0, 247, 255)">HTML</span>: [######------]
+
+<span style="color:gold">JS</span>:   [#########---]
+
+<ins><span>Back-end frameworks</span>
+  <span style="color:rgb(255, 94, 0)">Node.js</span>: [#######-----]
+  <span style="color:rgb(255, 94, 0)">REST</span>:    [####--------]
+  <span style="color:rgb(255, 94, 0)">NPM</span>:     [###---------]
+  <span style="color:rgb(255, 94, 0)">Express</span>: [##----------]
+</ins>
+<ins><span>Front-end frameworks</span>
+  <span style="color:rgb(90, 199, 186)">Handlebars</span>: [#####-------]
+  <span style="color:rgb(90, 199, 186)">jQuery</span>:     [###---------]
+  <span style="color:rgb(90, 199, 186)">Vue</span>:        [###---------]
+  <span style="color:rgb(90, 199, 186)">React</span>:      [#-----------]
+  <span style="color:rgb(90, 199, 186)">Redux</span>:      [#-----------]
+  <span style="color:rgb(90, 199, 186)">Angular</span>:    [#-----------]
+</ins>
+
+<ins><span>Techniques</span>
+  <span style="color:rgb(245, 176, 66)">Mob Programming</span>:            [############]
+  <span style="color:rgb(245, 176, 66)">Agile Software Development</span>: [##########--]
+  <span style="color:rgb(245, 176, 66)">Scrum</span>:                      [##########--]
+  <span style="color:rgb(245, 176, 66)">Pair Programming</span>:           [########----]
+  <span style="color:rgb(245, 176, 66)">TDD</span>:                        [#######-----]
+</ins>
+
+`);
+        return;
+      break;
+      case '/openGithub':
+        window.open('https://github.com/FelixJohnsson')
+      break;
+      case '/loadContactInfo':
+        $('#intro').t('add',`<br>
+        Email: felix_.johnson@hotmail.com
+        Phone: +46 73 626 1324
+        `);
+        return;
+      break;
+      case '/openSweResume':
+        window.open('https://v2.luminpdf.com/viewer/5d372de5269496001aee2f2c');
+        return;
+      break;
+      case '/openEngResume':
+        window.open('https://v2.luminpdf.com/viewer/5d372cfa269496001aee2ef6');
+        return;
+      break;
+      case '/openCurrentProject':
+         window.open('http://landlordmogul.com');
+        return;
+      break;
+    }
+    $('#intro').t('add',`${command[0]} <br>`);
+}
+</script>
 </html>
